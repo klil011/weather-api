@@ -13,7 +13,9 @@ public class WeatherService {
     @Value("${api.weather.key}")
     private String apiKey;
 
-    private final RestTemplate restTemplate = new RestTemplate();
+    //private final RestTemplate restTemplate = new RestTemplate();
+    @Autowired
+    private RestTemplate restTemplate;
 
     public WeatherResponse getWeather(String city) {
         String url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + city + "?key=" + apiKey;
