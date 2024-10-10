@@ -38,18 +38,18 @@ If you're using a local Redis instance, you don't need to modify anything. By de
 
 If your Redis server is running on a different host/port, update your application.properties with the appropriate Redis configuration:
 
-spring.redis.host=your_redis_host
-spring.redis.port=your_redis_port
+    spring.redis.host=your_redis_host
+    spring.redis.port=your_redis_port
 
 **Build and run the application**
 
 To build the project, run:
 
-mvn clean install
+    mvn clean install
 
 To start the application, run:
 
-mvn spring-boot:run
+    mvn spring-boot:run
 
 The application will start on http://localhost:8080.
 
