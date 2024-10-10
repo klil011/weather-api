@@ -28,7 +28,7 @@ Once you have your API key, you can add it to your application properties.
 
 Open the src/main/resources/application.properties file and add the following line:
 
-api.weather.key=your_visual_crossing_api_key
+    api.weather.key=your_visual_crossing_api_key
 
 **Setup Redis**
 
