@@ -18,8 +18,6 @@ Before running the application, make sure you have the following installed:
 
 ## Getting Started
 
-### 1. Clone the repository
-
 **Setup the VisualCrossing API Key**
 
 You need to get an API key from VisualCrossing to be able to fetch the weather data.
