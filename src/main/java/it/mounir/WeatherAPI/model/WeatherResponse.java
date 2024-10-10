@@ -3,6 +3,7 @@ package it.mounir.WeatherAPI.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
+/* Data model for weather data */
 public class WeatherResponse {
 
     private String address;

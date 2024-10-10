@@ -12,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.concurrent.TimeUnit;
 
+/* Handles weather API calls and Redis cache */
 @Service
 public class WeatherService {
 

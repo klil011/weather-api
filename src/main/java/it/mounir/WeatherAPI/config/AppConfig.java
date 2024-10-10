@@ -17,6 +17,8 @@ public class AppConfig {
         return new RestTemplate();
     }
 
+    /* RedisTemplate configuration */
+    
     /*
     * Cambiando il tipo di parametri accettato da RedisTemplate, da <String, String> a
     * <String, WeatherResponse>, per salvare nella cache di Redis direttamente un oggetto di tipo WeatherResponse,

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/* Handles HTTP requests for weather data */
 @RestController
 @RequestMapping("api/weather")
 public class WeatherController {
