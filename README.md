@@ -63,6 +63,6 @@ http://localhost:8080/api/weather/city_name
 
 When a weather request is made for a city:
 
-    The application checks if the data for that city is present in Redis.
-    If the data is in Redis, it returns the cached data.
-    If the data is not in Redis, the application makes an API request to VisualCrossing, fetches the data, and stores it in Redis for 12 hours.
+- The application checks if the data for that city is present in Redis.
+- If the data is in Redis, it returns the cached data.
+- If the data is not in Redis, the application makes an API request to VisualCrossing, fetches the data, and stores it in Redis for 12 hours.
