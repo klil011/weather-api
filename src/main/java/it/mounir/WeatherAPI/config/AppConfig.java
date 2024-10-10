@@ -17,6 +17,16 @@ public class AppConfig {
         return new RestTemplate();
     }
 
+    /*
+    * Cambiando il tipo di parametri accettato da RedisTemplate, da <String, String> a
+    * <String, WeatherResponse>, per salvare nella cache di Redis direttamente un oggetto di tipo WeatherResponse,
+    * Spring Boot non è riuscito a iniettare le dipendenze necessarie per l'oggetto perchè di default configura il
+    * RedisTemplate per usare chiavi e valori di tipo String. Avendo cambiato il tipo dei valori Spring non sa più come
+    * serializzare e deserializzare l'oggetto RedisTemplate, perciò bisogna configurazione personalizzata.
+    *
+    * Nello specifico ha bisogno che li venga specificato un serializer che possa convertire l'oggetto
+    * WeatherResponse in un forato accettato da Redis (in questo caso un Json).
+    * */
     @Bean
     public RedisTemplate<String, WeatherResponse> redisTemplate(RedisConnectionFactory connectionFactory) {
         RedisTemplate<String, WeatherResponse> template = new RedisTemplate<>();
