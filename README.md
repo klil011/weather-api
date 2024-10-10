@@ -21,7 +21,9 @@ Before running the application, make sure you have the following installed:
 **Setup the VisualCrossing API Key**
 
 You need to get an API key from VisualCrossing to be able to fetch the weather data.
+
 Once you have your API key, you can add it to your application properties.
+
 Open the src/main/resources/application.properties file and add the following line:
 
 api.weather.key=your_visual_crossing_api_key
@@ -29,7 +31,9 @@ api.weather.key=your_visual_crossing_api_key
 **Setup Redis**
 
 Make sure you have a running Redis instance on your machine (i used a local instance, to keep it simple, but you can use a remote one).
+
 If you're using a local Redis instance, you don't need to modify anything. By default, the application expects Redis to be running at localhost:6379.
+
 If your Redis server is running on a different host/port, update your application.properties with the appropriate Redis configuration:
 
 spring.redis.host=your_redis_host
