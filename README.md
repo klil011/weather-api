@@ -66,3 +66,10 @@ When a weather request is made for a city:
 - The application checks if the data for that city is present in Redis.
 - If the data is in Redis, it returns the cached data.
 - If the data is not in Redis, the application makes an API request to VisualCrossing, fetches the data, and stores it in Redis for 12 hours.
+
+**What i learned from this project ?**
+
+- how to work with 3rd party APIs
+- how to configure and use Redis for caching
+- Json serialization and deserializtion
+- how to structure API
