@@ -14,7 +14,7 @@ Before running the application, make sure you have the following installed:
 
 1. **Java 11+**
 2. **Maven 3.x+** (for building the project)
-3. **Redis** (running locally or on a remote server)
+3. **Redis** (running locally)
 
 ## Getting Started
 
