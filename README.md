@@ -1,5 +1,7 @@
 # Weather API Application
 
+**Disclaimer**: The project idea for this application were acquired from the [Developer RoadMaps](https://roadmap.sh) website. The project idea can be found at the following link: [Weather API Wrapper Service](https://roadmap.sh/projects/weather-api-wrapper-service).
+
 This is a Spring Boot application that fetches weather data from a third-party API (VisualCrossing) and caches the data in-memory using Redis. The weather data is fetched based on the city provided by the user, and if the data is already in the cache, it will be retrieved from Redis instead of making an API call.
 
 ## Features
