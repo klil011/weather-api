@@ -62,24 +62,3 @@ When a weather request is made for a city:
     The application checks if the data for that city is present in Redis.
     If the data is in Redis, it returns the cached data.
     If the data is not in Redis, the application makes an API request to VisualCrossing, fetches the data, and stores it in Redis for 12 hours.
-
-**Project-tree**
-
-src/
-│
-├── main/
-│   ├── java/
-│   │   └── it/mounir/WeatherAPI/
-│   │       ├── controllers/
-│   │       │   └── WeatherController.java  # Handles HTTP requests for weather data
-│   │       ├── services/
-│   │       │   └── WeatherService.java     # Handles weather API calls and Redis cache
-│   │       ├── models/
-│   │       │   └── WeatherResponse.java    # Data model for weather data
-│   │       └── config/
-│   │           └── AppConfig.java          # RedisTemplate configuration
-│   ├── resources/
-│   │   └── application.properties          # Application configuration
-│   └── ...
-└── ...
-
