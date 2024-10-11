@@ -67,6 +67,8 @@ Quando viene effettuata una richiesta meteo per una città:
 - Se i dati sono presenti in Redis, restituisce i dati memorizzati nella cache.
 - Se i dati non sono presenti in Redis, l'applicazione effettua una richiesta all'API VisualCrossing, recupera i dati e li memorizza in Redis per 12 ore.
 
+## Riflesioni
+
 **Cosa ho imparato da questo progetto?**
 
 - Come lavorare con API di terze parti.
