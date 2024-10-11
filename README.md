@@ -8,7 +8,6 @@ Questa è un'applicazione Spring Boot che recupera dati meteorologici da un'API 
 
 - Recupero dei dati meteorologici dall'API di VisualCrossing.
 - Memorizzazione dei dati meteorologici in Redis per 12 ore per evitare chiamate API frequenti.
-- Se i dati non sono disponibili in Redis, vengono recuperati automaticamente dall'API e salvati in Redis.
 
 ## Prerequisiti
 
