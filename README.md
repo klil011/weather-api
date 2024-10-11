@@ -1,76 +1,76 @@
 # Weather API Application
 
-**Disclaimer**: The project idea for this application were acquired from the [Developer RoadMaps](https://roadmap.sh) website. The project idea can be found at the following link: [Weather API Wrapper Service](https://roadmap.sh/projects/weather-api-wrapper-service).
+**Disclaimer**: L'idea di questo progetto è stata acquisita dal sito [Developer RoadMaps](https://roadmap.sh). L'idea del progetto può essere trovata al seguente link: [Weather API Wrapper Service](https://roadmap.sh/projects/weather-api-wrapper-service).
 
-This is a Spring Boot application that fetches weather data from a third-party API (VisualCrossing) and caches the data in-memory using Redis. The weather data is fetched based on the city provided by the user, and if the data is already in the cache, it will be retrieved from Redis instead of making an API call.
+Questa è un'applicazione Spring Boot che recupera dati meteorologici da un'API di terze parti [VisualCrossing](https://www.visualcrossing.com/) e memorizza i dati nella cache in memoria utilizzando [Redis](https://redis.io/). I dati vengono recuperati in base alla città fornita dall'utente e, se i dati sono già presenti nella cache, vengono prelevati da Redis senza effettuare una nuova chiamata API.
 
-## Features
+## Funzionalità
 
-- Fetches weather data from the VisualCrossing API.
-- Caches the weather data in Redis for 12 hours to avoid frequent API calls.
-- If data is not available in Redis, it automatically fetches the data from the API and saves it in Redis.
-  
-## Prerequisites
+- Recupero dei dati meteorologici dall'API di VisualCrossing.
+- Memorizzazione dei dati meteorologici in Redis per 12 ore per evitare chiamate API frequenti.
+- Se i dati non sono disponibili in Redis, vengono recuperati automaticamente dall'API e salvati in Redis.
 
-Before running the application, make sure you have the following installed:
+## Prerequisiti
+
+Prima di eseguire l'applicazione, è necessario avere installato quanto segue:
 
 1. **Java 11+**
-2. **Maven 3.x+** (for building the project)
-3. **Redis** (running locally)
+2. **Maven 3.x+** (per la compilazione del progetto)
+3. **Redis** (in esecuzione localmente)
 
-## Getting Started
+## Per iniziare
 
-**Setup the VisualCrossing API Key**
+### Configurare la chiave API di VisualCrossing
 
-You need to get an API key from VisualCrossing to be able to fetch the weather data.
+È necessario ottenere una chiave API da VisualCrossing per poter recuperare i dati meteorologici.
 
-Once you have your API key, you can add it to your application properties.
+Una volta ottenuta la chiave API, aggiungerla alle proprietà dell'applicazione.
 
-Open the src/main/resources/application.properties file and add the following line:
+Aprire il file `src/main/resources/application.properties` e aggiungere la seguente riga:
 
-    api.weather.key=your_visual_crossing_api_key
+    api.weather.key={visual_crossing_api_key}
 
-**Setup Redis**
+**Configurazione di Redis**
 
-Make sure you have a running Redis instance on your machine (i used a local instance, to keep it simple, but you can use a remote one).
+Assicurarsi di avere un'istanza di Redis in esecuzione sulla propria macchina (io ho utilizzato un'istanza locale per semplicità, ma si può utilizzare anche un'istanza remota).
 
-If you're using a local Redis instance, you don't need to modify anything. By default, the application expects Redis to be running at localhost:6379.
+Se si utilizza un'istanza locale di Redis, non è necessario modificare alcuna configurazione. Di default, l'applicazione si aspetta che Redis sia in esecuzione su localhost:6379.
 
-If your Redis server is running on a different host/port, update your application.properties with the appropriate Redis configuration:
+Se il server Redis è in esecuzione su un host o porta diversa, bisogna aggiornare il file application.properties con la configurazione appropriata:
 
-    spring.redis.host=your_redis_host
-    spring.redis.port=your_redis_port
+    spring.redis.host={redis_host}
+    spring.redis.port={redis_port}
 
-**Build and run the application**
+**Compilazione ed esecuzione dell'applicazione**
 
-To build the project, run:
+Per compilare il progetto, eseguire:
 
     mvn clean install
 
-To start the application, run:
+Per avviare l'applicazione, eseguire:
 
     mvn spring-boot:run
 
-The application will start on http://localhost:8080.
+L'applicazione verrà avviata all'indirizzo http://localhost:8080.
 
-**Test the application**
+**Per testare l'applicazione**
 
-You can test the weather API endpoint by making a GET request to the following URL (i used PostMan), replacing city_name with the city you want to query:
+È possibile testare l'endpoint dell'API meteo effettuando una richiesta GET al seguente URL (io ho utilizzato PostMan), sostituendo city_name con la città che si desidera interrogare:
 
-http://localhost:8080/api/weather/city_name
+    http://localhost:8080/api/weather/{city_name}
 
-**Caching Mechanism**
+**Meccanismo di caching**
 
-When a weather request is made for a city:
+Quando viene effettuata una richiesta meteo per una città:
 
-- The application checks if the data for that city is present in Redis.
-- If the data is in Redis, it returns the cached data.
-- If the data is not in Redis, the application makes an API request to VisualCrossing, fetches the data, and stores it in Redis for 12 hours.
+- L'applicazione verifica se i dati per quella città sono già presenti in Redis.
+- Se i dati sono presenti in Redis, restituisce i dati memorizzati nella cache.
+- Se i dati non sono presenti in Redis, l'applicazione effettua una richiesta all'API VisualCrossing, recupera i dati e li memorizza in Redis per 12 ore.
 
-**What i learned from this project ?**
+**Cosa ha imparato da questo progetto?**
 
-- how to work with 3rd party APIs
-- how to configure and use Redis for caching
-- Json serialization and deserializtion
-- how to structure API
-- how to work with environment variables
+- Come lavorare con API di terze parti.
+- Come configurare e utilizzare Redis per il caching.
+- Serializzazione e deserializzazione JSON.
+- Come strutturare un'API.
+- Come gestire le variabili d'ambiente.
