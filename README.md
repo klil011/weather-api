@@ -73,3 +73,4 @@ When a weather request is made for a city:
 - how to configure and use Redis for caching
 - Json serialization and deserializtion
 - how to structure API
+- how to work with environment variables
