@@ -30,7 +30,7 @@ Aprire il file `src/main/resources/application.properties` e aggiungere la segue
 
     api.weather.key={visual_crossing_api_key}
 
-**Configurazione di Redis**
+### Configurazione di Redis
 
 Assicurarsi di avere un'istanza di Redis in esecuzione sulla propria macchina (io ho utilizzato un'istanza locale per semplicità, ma si può utilizzare anche un'istanza remota).
 
@@ -41,7 +41,7 @@ Se il server Redis è in esecuzione su un host o porta diversa, bisogna aggiorna
     spring.redis.host={redis_host}
     spring.redis.port={redis_port}
 
-**Compilazione ed esecuzione dell'applicazione**
+### Compilazione ed esecuzione dell'applicazione
 
 Per compilare il progetto, eseguire:
 
@@ -53,13 +53,13 @@ Per avviare l'applicazione, eseguire:
 
 L'applicazione verrà avviata all'indirizzo http://localhost:8080.
 
-**Per testare l'applicazione**
+### Per testare l'applicazione
 
 È possibile testare l'endpoint dell'API meteo effettuando una richiesta GET al seguente URL (io ho utilizzato PostMan), sostituendo city_name con la città che si desidera interrogare:
 
     http://localhost:8080/api/weather/{city_name}
 
-**Meccanismo di caching**
+### Meccanismo di caching
 
 Quando viene effettuata una richiesta meteo per una città:
 
